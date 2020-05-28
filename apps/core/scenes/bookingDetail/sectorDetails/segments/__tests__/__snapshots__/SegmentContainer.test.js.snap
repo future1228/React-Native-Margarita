@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+Object {
+  "output": <SectorDetailsWrapper>
+    <BookingTypeRenderer
+      multicityComponent={
+        <ForwardRef(Relay(SectorsListMulticity))
+          data={null}
+        />
+      }
+      oneWayComponent={
+        <ForwardRef(Relay(SectorsListOneWay))
+          data={null}
+        />
+      }
+      returnComponent={
+        <ForwardRef(Relay(SectorsListReturn))
+          data={null}
+        />
+      }
+    />
+    <ForwardRef(Relay(SegmentMap))
+      data={null}
+    />
+  </SectorDetailsWrapper>,
+}
+`;

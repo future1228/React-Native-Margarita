@@ -1,0 +1,18 @@
+{
+  "name": "@kiwicom/margarita-docs",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "docusaurus-start --port 1337",
+    "build": "docusaurus-build",
+    "publish-gh-pages": "docusaurus-publish",
+    "deploy": "yarn build; CUSTOM_COMMIT_MESSAGE='[skip ci] Update docs' yarn publish-gh-pages",
+    "write-translations": "docusaurus-write-translations"
+  },
+  "devDependencies": {
+    "docusaurus": "^1.8.1"
+  },
+  "dependencies": {
+    "react": "^16.8.3"
+  }
+}

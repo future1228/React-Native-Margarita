@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "beforeStage": "yarn build"
+  },
+  "npm": {
+    "publish": true
+  }
+}

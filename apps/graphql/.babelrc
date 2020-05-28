@@ -1,0 +1,8 @@
+{
+  "presets": [
+    "@kiwicom/babel-preset-kiwicom",
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@kiwicom/margarita-relay",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "@kiwicom/margarita-components": "^0",
+    "@kiwicom/margarita-graphql": "^0",
+    "@kiwicom/relay": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@kiwicom/universal-components": "^",
+    "react": "^",
+    "react-native": "^",
+    "react-native-dotenv": "^",
+    "react-relay": "^"
+  }
+}

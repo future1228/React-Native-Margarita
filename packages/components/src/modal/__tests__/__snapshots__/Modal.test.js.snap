@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+Object {
+  "output": <Modal
+    backdropOpacity={0.5}
+    isVisible={true}
+    onBackdropPress={[MockFunction]}
+    onRequestClose={[MockFunction]}
+    style={
+      Array [
+        Object {
+          "justifyContent": "flex-end",
+          "margin": 0,
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+            "borderTopEndRadius": 6,
+            "borderTopStartRadius": 6,
+            "paddingBottom": 40,
+            "paddingTop": 4,
+            "width": "100%",
+          },
+          false,
+          undefined,
+        ]
+      }
+    >
+      <Text>
+        Modal test content
+      </Text>
+    </Component>
+  </Modal>,
+}
+`;

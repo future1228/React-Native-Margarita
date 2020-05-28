@@ -1,0 +1,873 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortTabs renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "borderTopColor": "transparent",
+          "flexDirection": "row-reverse",
+          "justifyContent": "flex-start",
+          "overflow": "hidden",
+          "padding": 12,
+        },
+        Object {
+          "height": 40,
+        },
+        Object {
+          "backgroundColor": "#fff",
+          "borderStartColor": "#00a991",
+          "borderStartWidth": 4,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "margin": 0,
+            },
+            Object {
+              "textAlign": "left",
+            },
+            Object {
+              "fontFamily": "Roboto",
+            },
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+              },
+              Object {
+                "color": "#00a991",
+              },
+              false,
+            ],
+          ]
+        }
+      >
+        Best
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingTop": 6,
+            },
+            Object {
+              "paddingHorizontal": 16,
+              "paddingTop": 0,
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "margin": 0,
+              },
+              Object {
+                "textAlign": "left",
+              },
+              Object {
+                "fontFamily": "Roboto",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                },
+                Object {
+                  "color": "#00a991",
+                },
+                false,
+              ],
+            ]
+          }
+        >
+          290
+           
+          EUR
+        </Text>
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "margin": 0,
+              },
+              Object {
+                "textAlign": "left",
+              },
+              Object {
+                "fontFamily": "Roboto",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                },
+                Object {
+                  "marginStart": 8,
+                },
+                Object {
+                  "color": "#00a991",
+                },
+                false,
+              ],
+            ]
+          }
+        >
+          3h 40m
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingEnd": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "orbit-icons",
+            },
+            Object {
+              "fontSize": 16,
+              "height": 16,
+              "lineHeight": 16,
+              "width": 16,
+            },
+            Object {
+              "color": "#00a991",
+            },
+            undefined,
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "borderTopColor": "transparent",
+          "flexDirection": "row-reverse",
+          "justifyContent": "flex-start",
+          "overflow": "hidden",
+          "padding": 12,
+        },
+        Object {
+          "height": 40,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "margin": 0,
+            },
+            Object {
+              "textAlign": "left",
+            },
+            Object {
+              "fontFamily": "Roboto",
+            },
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+              },
+              false,
+              false,
+            ],
+          ]
+        }
+      >
+        Cheapest
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingTop": 6,
+            },
+            Object {
+              "paddingHorizontal": 16,
+              "paddingTop": 0,
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "margin": 0,
+              },
+              Object {
+                "textAlign": "left",
+              },
+              Object {
+                "fontFamily": "Roboto",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                },
+                false,
+                false,
+              ],
+            ]
+          }
+        >
+          130
+           
+          EUR
+        </Text>
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "margin": 0,
+              },
+              Object {
+                "textAlign": "left",
+              },
+              Object {
+                "fontFamily": "Roboto",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                },
+                Object {
+                  "marginStart": 8,
+                },
+                false,
+                false,
+              ],
+            ]
+          }
+        >
+          9h 25m
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingEnd": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "orbit-icons",
+            },
+            Object {
+              "fontSize": 16,
+              "height": 16,
+              "lineHeight": 16,
+              "width": 16,
+            },
+            Object {
+              "color": "#46515e",
+            },
+            undefined,
+          ]
+        }
+      >
+        @
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "borderTopColor": "transparent",
+          "flexDirection": "row-reverse",
+          "justifyContent": "flex-start",
+          "overflow": "hidden",
+          "padding": 12,
+        },
+        Object {
+          "height": 40,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "margin": 0,
+            },
+            Object {
+              "textAlign": "left",
+            },
+            Object {
+              "fontFamily": "Roboto",
+            },
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+              },
+              false,
+              false,
+            ],
+          ]
+        }
+      >
+        Fastest
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingTop": 6,
+            },
+            Object {
+              "paddingHorizontal": 16,
+              "paddingTop": 0,
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "margin": 0,
+              },
+              Object {
+                "textAlign": "left",
+              },
+              Object {
+                "fontFamily": "Roboto",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                },
+                false,
+                false,
+              ],
+            ]
+          }
+        >
+          386
+           
+          EUR
+        </Text>
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "margin": 0,
+              },
+              Object {
+                "textAlign": "left",
+              },
+              Object {
+                "fontFamily": "Roboto",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                },
+                Object {
+                  "marginStart": 8,
+                },
+                false,
+                false,
+              ],
+            ]
+          }
+        >
+          1h 20min
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingEnd": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "orbit-icons",
+            },
+            Object {
+              "fontSize": 16,
+              "height": 16,
+              "lineHeight": 16,
+              "width": 16,
+            },
+            Object {
+              "color": "#46515e",
+            },
+            undefined,
+          ]
+        }
+      >
+        e
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`SortTabs renders correctly with no parameters 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "borderTopColor": "transparent",
+          "flexDirection": "row-reverse",
+          "justifyContent": "flex-start",
+          "overflow": "hidden",
+          "padding": 12,
+        },
+        Object {
+          "height": 40,
+        },
+        Object {
+          "backgroundColor": "#fff",
+          "borderStartColor": "#00a991",
+          "borderStartWidth": 4,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "margin": 0,
+            },
+            Object {
+              "textAlign": "left",
+            },
+            Object {
+              "fontFamily": "Roboto",
+            },
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+              },
+              Object {
+                "color": "#00a991",
+              },
+              false,
+            ],
+          ]
+        }
+      >
+        Best
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingTop": 6,
+            },
+            Object {
+              "paddingHorizontal": 16,
+              "paddingTop": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingEnd": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "orbit-icons",
+            },
+            Object {
+              "fontSize": 16,
+              "height": 16,
+              "lineHeight": 16,
+              "width": 16,
+            },
+            Object {
+              "color": "#00a991",
+            },
+            undefined,
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "borderTopColor": "transparent",
+          "flexDirection": "row-reverse",
+          "justifyContent": "flex-start",
+          "overflow": "hidden",
+          "padding": 12,
+        },
+        Object {
+          "height": 40,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "margin": 0,
+            },
+            Object {
+              "textAlign": "left",
+            },
+            Object {
+              "fontFamily": "Roboto",
+            },
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+              },
+              false,
+              false,
+            ],
+          ]
+        }
+      >
+        Cheapest
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingTop": 6,
+            },
+            Object {
+              "paddingHorizontal": 16,
+              "paddingTop": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingEnd": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "orbit-icons",
+            },
+            Object {
+              "fontSize": 16,
+              "height": 16,
+              "lineHeight": 16,
+              "width": 16,
+            },
+            Object {
+              "color": "#46515e",
+            },
+            undefined,
+          ]
+        }
+      >
+        @
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "borderTopColor": "transparent",
+          "flexDirection": "row-reverse",
+          "justifyContent": "flex-start",
+          "overflow": "hidden",
+          "padding": 12,
+        },
+        Object {
+          "height": 40,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "margin": 0,
+            },
+            Object {
+              "textAlign": "left",
+            },
+            Object {
+              "fontFamily": "Roboto",
+            },
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+              },
+              false,
+              false,
+            ],
+          ]
+        }
+      >
+        Fastest
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingTop": 6,
+            },
+            Object {
+              "paddingHorizontal": 16,
+              "paddingTop": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingEnd": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "orbit-icons",
+            },
+            Object {
+              "fontSize": 16,
+              "height": 16,
+              "lineHeight": 16,
+              "width": 16,
+            },
+            Object {
+              "color": "#46515e",
+            },
+            undefined,
+          ]
+        }
+      >
+        e
+      </Text>
+    </View>
+  </View>
+</View>
+`;

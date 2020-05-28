@@ -1,0 +1,957 @@
+[
+  {
+    "arrival": {
+      "when": 0,
+      "where": {
+        "code": "LPA",
+        "name": "Las Palmas"
+      }
+    },
+    "auth_token": "lol",
+    "bag_params": {},
+    "bags": 1,
+    "bags_restrictions": {
+      "hands": {},
+      "holds": {
+        "1": {
+          "height": 38,
+          "length": 70,
+          "weight": 20,
+          "width": 50
+        }
+      }
+    },
+    "bid": 16463447,
+    "booked_at": "skypicker",
+    "booking_token": "lol",
+    "brand": "kiwicom",
+    "cancel_requested": null,
+    "card_payment": 73.5,
+    "contact": {
+      "email": "reactnative@kiwi.com",
+      "phone": "+355 9786896996",
+      "pid": 13888735
+    },
+    "created": 1540820718,
+    "credits_payment": 0,
+    "currency": "EUR",
+    "departure": {
+      "when": 0,
+      "where": {
+        "code": "VIE",
+        "name": "Vienna"
+      }
+    },
+    "disabled_bags_in_mmb": false,
+    "flight_ids": [
+      "SP8913037_11291936"
+    ],
+    "flights": [
+      {
+        "airline": {
+          "checkin": 2,
+          "doing_online_checkin": 1,
+          "iata": "OE",
+          "name": "LaudaMotion",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1543422000,
+            "utc": 1543422000
+          },
+          "where": {
+            "city_id": "las-palmas_es",
+            "code": "LPA",
+            "country": "ES",
+            "name": "Las Palmas",
+            "station": "Gran Canaria"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": false,
+        "departure": {
+          "when": {
+            "local": 1543407600,
+            "utc": 1543404000
+          },
+          "where": {
+            "city_id": "vienna_at",
+            "code": "VIE",
+            "country": "AT",
+            "name": "Vienna",
+            "station": "Vienna International"
+          }
+        },
+        "extras": "OE",
+        "flight_no": 2570,
+        "guarantee": false,
+        "guarantee_disclaimer": "",
+        "id": "SP8913037_11291936",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": null,
+        "return": 0
+      }
+    ],
+    "grace_period_fee": null,
+    "grade": {
+      "id": "B",
+      "time": 60
+    },
+    "is_tat_informed": false,
+    "max_bags": 1,
+    "netverify_requested": true,
+    "original_currency": "CZK",
+    "original_flight_price": null,
+    "original_price": 1900,
+    "paid_over": "zooz",
+    "passenger_ids": [
+      13888735
+    ],
+    "passengers": [
+      {
+        "bags": 1,
+        "birthday": "1990-05-20",
+        "category": "adult",
+        "contact_passenger": true,
+        "firstname": "test",
+        "hand_bags": {},
+        "id": 13888735,
+        "insurance_price": null,
+        "insurance_type": "none",
+        "lastname": "test",
+        "nationality": "al",
+        "priority_boarding": {
+          "SP8913037_11291936": {
+            "is_ordered": false
+          }
+        },
+        "title": "ms",
+        "travel_document": {
+          "cardno": null,
+          "expiration": null
+        }
+      }
+    ],
+    "price": 73.5,
+    "prices": [
+      "39.89"
+    ],
+    "route": [
+      "VIE",
+      "LPA"
+    ],
+    "sandbox": 1,
+    "segments": null,
+    "status": "closed",
+    "transfer_ids": []
+  },
+  {
+    "arrival": {
+      "when": 0,
+      "where": {
+        "code": "YYT",
+        "name": "St. John s"
+      }
+    },
+    "auth_token": "lol",
+    "bag_params": {},
+    "bags": 0,
+    "bags_restrictions": {
+      "hands": {},
+      "holds": {}
+    },
+    "bid": 8142828,
+    "booked_at": "skypicker",
+    "booking_token": "lol",
+    "brand": "kiwicom",
+    "cancel_requested": null,
+    "card_payment": 1121,
+    "contact": {
+      "email": "reactnative@kiwi.com",
+      "phone": "+44 000",
+      "pid": 12431174
+    },
+    "created": 1534758440,
+    "credits_payment": 0,
+    "currency": "EUR",
+    "departure": {
+      "when": 0,
+      "where": {
+        "code": "MAD",
+        "name": "Madrid"
+      }
+    },
+    "disabled_bags_in_mmb": false,
+    "flight_ids": [
+      "SP6869477_7954345",
+      "SP5854620_7813367",
+      "SP4840089_6662290",
+      "SP4840089_6662289",
+      "SP6869480_8970042"
+    ],
+    "flights": [
+      {
+        "airline": {
+          "checkin": 2,
+          "doing_online_checkin": 1,
+          "iata": "FR",
+          "name": "Ryanair",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1537485000,
+            "utc": 1537481400
+          },
+          "where": {
+            "city_id": "dublin_ie",
+            "code": "DUB",
+            "country": "IE",
+            "name": "Dublin",
+            "station": "Dublin"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": false,
+        "departure": {
+          "when": {
+            "local": 1537479000,
+            "utc": 1537471800
+          },
+          "where": {
+            "city_id": "madrid_es",
+            "code": "MAD",
+            "country": "ES",
+            "name": "Madrid",
+            "station": "Adolfo Suárez Madrid–Barajas"
+          }
+        },
+        "extras": "FR",
+        "flight_no": 7157,
+        "guarantee": false,
+        "guarantee_disclaimer": "",
+        "id": "SP5854620_7813367",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": null,
+        "return": 0
+      },
+      {
+        "airline": {
+          "checkin": 1,
+          "doing_online_checkin": 1,
+          "iata": "WS",
+          "name": "WestJet",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1537524060,
+            "utc": 1537533060
+          },
+          "where": {
+            "city_id": "st-johns_nl_ca",
+            "code": "YYT",
+            "country": "CA",
+            "name": "St. John s",
+            "station": "St. John's International"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": true,
+        "departure": {
+          "when": {
+            "local": 1537518600,
+            "utc": 1537515000
+          },
+          "where": {
+            "city_id": "dublin_ie",
+            "code": "DUB",
+            "country": "IE",
+            "name": "Dublin",
+            "station": "Dublin"
+          }
+        },
+        "extras": "WS",
+        "flight_no": 17,
+        "guarantee": true,
+        "guarantee_disclaimer": "",
+        "id": "SP6869477_7954345",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": null,
+        "return": 0
+      },
+      {
+        "airline": {
+          "checkin": 1,
+          "doing_online_checkin": 1,
+          "iata": "WS",
+          "name": "WestJet",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1538429520,
+            "utc": 1538440320
+          },
+          "where": {
+            "city_id": "halifax_ns_ca",
+            "code": "YHZ",
+            "country": "CA",
+            "name": "Halifax",
+            "station": "Halifax Stanfield International"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": false,
+        "departure": {
+          "when": {
+            "local": 1538423700,
+            "utc": 1538432700
+          },
+          "where": {
+            "city_id": "st-johns_nl_ca",
+            "code": "YYT",
+            "country": "CA",
+            "name": "St. John s",
+            "station": "St. John's International"
+          }
+        },
+        "extras": "WS",
+        "flight_no": 3425,
+        "guarantee": false,
+        "guarantee_disclaimer": "",
+        "id": "SP4840089_6662289",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": null,
+        "return": 1
+      },
+      {
+        "airline": {
+          "checkin": 1,
+          "doing_online_checkin": 1,
+          "iata": "WS",
+          "name": "WestJet",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1538468700,
+            "utc": 1538465100
+          },
+          "where": {
+            "city_id": "london_gb",
+            "code": "LGW",
+            "country": "GB",
+            "name": "London",
+            "station": "Gatwick"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": false,
+        "departure": {
+          "when": {
+            "local": 1538433300,
+            "utc": 1538444100
+          },
+          "where": {
+            "city_id": "halifax_ns_ca",
+            "code": "YHZ",
+            "country": "CA",
+            "name": "Halifax",
+            "station": "Halifax Stanfield International"
+          }
+        },
+        "extras": "WS",
+        "flight_no": 24,
+        "guarantee": false,
+        "guarantee_disclaimer": "",
+        "id": "SP4840089_6662290",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": null,
+        "return": 1
+      },
+      {
+        "airline": {
+          "checkin": 30,
+          "doing_online_checkin": 1,
+          "iata": "U2",
+          "name": "easyJet",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1538494800,
+            "utc": 1538487600
+          },
+          "where": {
+            "city_id": "madrid_es",
+            "code": "MAD",
+            "country": "ES",
+            "name": "Madrid",
+            "station": "Adolfo Suárez Madrid–Barajas"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": true,
+        "departure": {
+          "when": {
+            "local": 1538481900,
+            "utc": 1538478300
+          },
+          "where": {
+            "city_id": "london_gb",
+            "code": "LGW",
+            "country": "GB",
+            "name": "London",
+            "station": "Gatwick"
+          }
+        },
+        "extras": "U2",
+        "flight_no": 8277,
+        "guarantee": true,
+        "guarantee_disclaimer": "",
+        "id": "SP6869480_8970042",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": null,
+        "return": 1
+      }
+    ],
+    "grace_period_fee": null,
+    "grade": {
+      "id": "B",
+      "time": 60
+    },
+    "is_tat_informed": false,
+    "max_bags": 1,
+    "netverify_requested": true,
+    "original_currency": "EUR",
+    "original_flight_price": 1121,
+    "original_price": 1121,
+    "paid_over": "zooz",
+    "passenger_ids": [
+      12431175,
+      12431174
+    ],
+    "passengers": [
+      {
+        "bags": 0,
+        "birthday": "1985-01-01",
+        "category": "adult",
+        "contact_passenger": false,
+        "firstname": "TEST",
+        "hand_bags": {},
+        "id": 12431175,
+        "insurance_price": null,
+        "insurance_type": "none",
+        "lastname": "TEST",
+        "nationality": "gb",
+        "priority_boarding": {
+          "SP4840089_6662289": {
+            "is_ordered": false
+          },
+          "SP4840089_6662290": {
+            "is_ordered": false
+          },
+          "SP5854620_7813367": {
+            "is_ordered": false
+          },
+          "SP6869477_7954345": {
+            "is_ordered": false
+          },
+          "SP6869480_8970042": {
+            "is_ordered": false
+          }
+        },
+        "title": "mr",
+        "travel_document": {
+          "cardno": "123241341",
+          "expiration": 1534896000
+        }
+      },
+      {
+        "bags": 0,
+        "birthday": "1985-01-01",
+        "category": "adult",
+        "contact_passenger": true,
+        "firstname": "TEST",
+        "hand_bags": {},
+        "id": 12431174,
+        "insurance_price": null,
+        "insurance_type": "none",
+        "lastname": "TEST",
+        "nationality": "gb",
+        "priority_boarding": {
+          "SP4840089_6662289": {
+            "is_ordered": false
+          },
+          "SP4840089_6662290": {
+            "is_ordered": false
+          },
+          "SP5854620_7813367": {
+            "is_ordered": false
+          },
+          "SP6869477_7954345": {
+            "is_ordered": false
+          },
+          "SP6869480_8970042": {
+            "is_ordered": false
+          }
+        },
+        "title": "mr",
+        "travel_document": {
+          "cardno": null,
+          "expiration": null
+        }
+      }
+    ],
+    "price": 1121,
+    "prices": [
+      "30.59",
+      "236.88",
+      "85.52",
+      "85.52",
+      "38.81"
+    ],
+    "route": [
+      "MAD",
+      "YYT"
+    ],
+    "sandbox": 1,
+    "segments": null,
+    "status": "confirmed",
+    "transfer_ids": []
+  },
+  {
+    "arrival": {
+      "when": 0,
+      "where": {
+        "code": "TLV",
+        "name": "Tel Aviv"
+      }
+    },
+    "auth_token": "lol",
+    "bag_params": {},
+    "bags": 0,
+    "bags_restrictions": {
+      "hands": {},
+      "holds": {}
+    },
+    "bid": 6676524,
+    "booked_at": "skypicker",
+    "booking_token": "lol",
+    "brand": "kiwicom",
+    "cancel_requested": null,
+    "card_payment": 978.01,
+    "contact": {
+      "email": "reactnative@kiwi.com",
+      "phone": "+420 000",
+      "pid": 10148317
+    },
+    "created": 1525274904,
+    "credits_payment": 0,
+    "currency": "EUR",
+    "departure": {
+      "when": 0,
+      "where": {
+        "code": "BTS",
+        "name": "Bratislava"
+      }
+    },
+    "disabled_bags_in_mmb": false,
+    "flight_ids": [
+      "SP3808270_5486513",
+      "SP2808961_4262335",
+      "SP2944652_4440593",
+      "SP3808267_5486510",
+      "SP3808271_5486514",
+      "SP3808266_5486509"
+    ],
+    "flights": [
+      {
+        "airline": {
+          "checkin": 2,
+          "doing_online_checkin": 1,
+          "iata": "FR",
+          "name": "Ryanair",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1531752000,
+            "utc": 1531741200
+          },
+          "where": {
+            "city_id": "thessaloniki_gr",
+            "code": "SKG",
+            "country": "GR",
+            "name": "Thessaloniki",
+            "station": "Thessaloniki International Airport  Macedonia "
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": false,
+        "departure": {
+          "when": {
+            "local": 1531741800,
+            "utc": 1531734600
+          },
+          "where": {
+            "city_id": "bratislava_sk",
+            "code": "BTS",
+            "country": "SK",
+            "name": "Bratislava",
+            "station": "Bratislava Airport"
+          }
+        },
+        "extras": "FR",
+        "flight_no": 2171,
+        "guarantee": false,
+        "guarantee_disclaimer": "",
+        "id": "SP2808961_4262335",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": "TESTPNR",
+        "return": 0
+      },
+      {
+        "airline": {
+          "checkin": 0,
+          "doing_online_checkin": null,
+          "iata": "EL",
+          "name": "Ellinair",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1531759200,
+            "utc": 1531748400
+          },
+          "where": {
+            "city_id": "santorini_gr",
+            "code": "JTR",
+            "country": "GR",
+            "name": "Santorini",
+            "station": "Santorini (Thira) National"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": true,
+        "departure": {
+          "when": {
+            "local": 1531755600,
+            "utc": 1531744800
+          },
+          "where": {
+            "city_id": "thessaloniki_gr",
+            "code": "SKG",
+            "country": "GR",
+            "name": "Thessaloniki",
+            "station": "Thessaloniki International Airport  Macedonia "
+          }
+        },
+        "extras": "EL",
+        "flight_no": 18,
+        "guarantee": true,
+        "guarantee_disclaimer": "",
+        "id": "SP3808271_5486514",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": "TESTPNR",
+        "return": 0
+      },
+      {
+        "airline": {
+          "checkin": 2,
+          "doing_online_checkin": 1,
+          "iata": "FR",
+          "name": "Ryanair",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1532941800,
+            "utc": 1532931000
+          },
+          "where": {
+            "city_id": "athens_gr",
+            "code": "ATH",
+            "country": "GR",
+            "name": "Athens",
+            "station": "Athens International"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": false,
+        "departure": {
+          "when": {
+            "local": 1532938800,
+            "utc": 1532928000
+          },
+          "where": {
+            "city_id": "santorini_gr",
+            "code": "JTR",
+            "country": "GR",
+            "name": "Santorini",
+            "station": "Santorini (Thira) National"
+          }
+        },
+        "extras": "FR",
+        "flight_no": 1233,
+        "guarantee": true,
+        "guarantee_disclaimer": "",
+        "id": "SP2944652_4440593",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": "TESTPNR",
+        "return": 0
+      },
+      {
+        "airline": {
+          "checkin": 0,
+          "doing_online_checkin": null,
+          "iata": "LY",
+          "name": "El Al Israel Airlines",
+          "payment_card_copy_eticket_requirement": null
+        },
+        "arrival": {
+          "when": {
+            "local": 1532953200,
+            "utc": 1532942400
+          },
+          "where": {
+            "city_id": "tel-aviv_il",
+            "code": "TLV",
+            "country": "IL",
+            "name": "Tel Aviv",
+            "station": "Ben Gurion"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": true,
+        "departure": {
+          "when": {
+            "local": 1532946300,
+            "utc": 1532935500
+          },
+          "where": {
+            "city_id": "athens_gr",
+            "code": "ATH",
+            "country": "GR",
+            "name": "Athens",
+            "station": "Athens International"
+          }
+        },
+        "extras": "LY",
+        "flight_no": 542,
+        "guarantee": true,
+        "guarantee_disclaimer": "",
+        "id": "SP3808270_5486513",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": "TESTPNR",
+        "return": 0
+      },
+      {
+        "airline": {
+          "checkin": 0,
+          "doing_online_checkin": null,
+          "iata": "LO",
+          "name": "LOT Polish Airlines",
+          "payment_card_copy_eticket_requirement": null
+        },
+        "arrival": {
+          "when": {
+            "local": 1535184300,
+            "utc": 1535177100
+          },
+          "where": {
+            "city_id": "warsaw_pl",
+            "code": "WAW",
+            "country": "PL",
+            "name": "Warsaw",
+            "station": "Warsaw Chopin"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": false,
+        "departure": {
+          "when": {
+            "local": 1535173500,
+            "utc": 1535162700
+          },
+          "where": {
+            "city_id": "tel-aviv_il",
+            "code": "TLV",
+            "country": "IL",
+            "name": "Tel Aviv",
+            "station": "Ben Gurion"
+          }
+        },
+        "extras": "LO",
+        "flight_no": 152,
+        "guarantee": true,
+        "guarantee_disclaimer": "",
+        "id": "SP3808267_5486510",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": "TESTPNR",
+        "return": 0
+      },
+      {
+        "airline": {
+          "checkin": 2,
+          "doing_online_checkin": 1,
+          "iata": "W6",
+          "name": "Wizzair",
+          "payment_card_copy_eticket_requirement": false
+        },
+        "arrival": {
+          "when": {
+            "local": 1535205300,
+            "utc": 1535198100
+          },
+          "where": {
+            "city_id": "bratislava_sk",
+            "code": "BTS",
+            "country": "SK",
+            "name": "Bratislava",
+            "station": "Bratislava Airport"
+          }
+        },
+        "bags_recheck_disclaimer": "",
+        "bags_recheck_required": true,
+        "departure": {
+          "when": {
+            "local": 1535201100,
+            "utc": 1535193900
+          },
+          "where": {
+            "city_id": "warsaw_pl",
+            "code": "WAW",
+            "country": "PL",
+            "name": "Warsaw",
+            "station": "Warsaw Chopin"
+          }
+        },
+        "extras": "W6",
+        "flight_no": 1585,
+        "guarantee": true,
+        "guarantee_disclaimer": "",
+        "id": "SP3808266_5486509",
+        "is_cabin_bags_with_priority_boarding": false,
+        "reservation_number": "TESTPNR",
+        "return": 0
+      }
+    ],
+    "grace_period_fee": null,
+    "grade": {
+      "id": "D",
+      "time": 240
+    },
+    "is_tat_informed": false,
+    "max_bags": 1,
+    "netverify_requested": true,
+    "original_currency": "CZK",
+    "original_flight_price": null,
+    "original_price": 25009,
+    "paid_over": "zooz",
+    "passenger_ids": [
+      10148317,
+      10148316
+    ],
+    "passengers": [
+      {
+        "bags": 0,
+        "birthday": "1985-01-01",
+        "category": "adult",
+        "contact_passenger": true,
+        "firstname": "TEST",
+        "hand_bags": {},
+        "id": 10148317,
+        "insurance_price": null,
+        "insurance_type": "none",
+        "lastname": "TEST",
+        "nationality": "cz",
+        "priority_boarding": {
+          "SP2808961_4262335": {
+            "is_ordered": false
+          },
+          "SP2944652_4440593": {
+            "is_ordered": false
+          },
+          "SP3808266_5486509": {
+            "is_ordered": false
+          },
+          "SP3808267_5486510": {
+            "is_ordered": false
+          },
+          "SP3808270_5486513": {
+            "is_ordered": false
+          },
+          "SP3808271_5486514": {
+            "is_ordered": false
+          }
+        },
+        "title": "mr",
+        "travel_document": {
+          "cardno": "12345678XY",
+          "expiration": 1608768000
+        }
+      },
+      {
+        "bags": 0,
+        "birthday": "1985-01-01",
+        "category": "adult",
+        "contact_passenger": false,
+        "firstname": "TEST",
+        "hand_bags": {},
+        "id": 10148316,
+        "insurance_price": null,
+        "insurance_type": "none",
+        "lastname": "TEST",
+        "nationality": "cz",
+        "priority_boarding": {
+          "SP2808961_4262335": {
+            "is_ordered": false
+          },
+          "SP2944652_4440593": {
+            "is_ordered": false
+          },
+          "SP3808266_5486509": {
+            "is_ordered": false
+          },
+          "SP3808267_5486510": {
+            "is_ordered": false
+          },
+          "SP3808270_5486513": {
+            "is_ordered": false
+          },
+          "SP3808271_5486514": {
+            "is_ordered": false
+          }
+        },
+        "title": "mr",
+        "travel_document": {
+          "cardno": "12345678XY",
+          "expiration": 1608768000
+        }
+      }
+    ],
+    "price": 978.01,
+    "prices": [
+      "85.67",
+      "52.59",
+      "27.95",
+      "118.88",
+      "114.38",
+      "23.17"
+    ],
+    "route": [
+      "BTS",
+      "TLV"
+    ],
+    "sandbox": 1,
+    "segments": [
+      "2",
+      "4"
+    ],
+    "status": "confirmed",
+    "transfer_ids": []
+  }
+]

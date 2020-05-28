@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders blank 1`] = `
+Object {
+  "output": <Component
+    style={
+      Object {
+        "marginBottom": 12,
+      }
+    }
+  >
+    <Card>
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "paddingBottom": 16,
+            "paddingTop": 12,
+          }
+        }
+      >
+        <Icon
+          name="passenger"
+        />
+        <WithTheme
+          size="large"
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          0. Passenger
+        </WithTheme>
+      </Component>
+      <PassengerCardDetail />
+      <Separator />
+      <PassengerAdditonalInformation />
+    </Card>
+  </Component>,
+}
+`;
+
+exports[`renders with passenger info 1`] = `
+Object {
+  "output": <Component
+    style={
+      Object {
+        "marginBottom": 12,
+      }
+    }
+  >
+    <Card>
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "paddingBottom": 16,
+            "paddingTop": 12,
+          }
+        }
+      >
+        <Icon
+          name="passenger"
+        />
+        <WithTheme
+          size="large"
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          Mr. John Doe
+        </WithTheme>
+      </Component>
+      <PassengerCardDetail
+        dateOfBirth={1980-04-12T00:00:00.000Z}
+        nationality="Russian"
+        passportId="DF45SV9"
+      />
+      <Separator />
+      <PassengerAdditonalInformation
+        bags={
+          Array [
+            Object {
+              "dimensions": "11 x 32 x 70 cm",
+              "price": Object {
+                "amount": 84,
+                "currency": "EUR",
+              },
+              "quantity": 1,
+              "weight": "10 kg",
+            },
+            Object {
+              "dimensions": "40 x 52 x 78 cm",
+              "price": Object {
+                "amount": 84,
+                "currency": "EUR",
+              },
+              "quantity": 2,
+              "weight": "10 kg",
+            },
+          ]
+        }
+        insurance="Travel Inusurance Name"
+      />
+    </Card>
+  </Component>,
+}
+`;

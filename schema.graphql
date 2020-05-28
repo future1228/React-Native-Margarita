@@ -1,0 +1,706 @@
+schema {
+  query: RootQuery
+  mutation: RootMutation
+}
+
+"""Passenger's bag type and quantity"""
+type Bag {
+  type: BagType
+  quantity: Int
+  dimensions: String
+}
+
+"""Bag types"""
+enum BagType {
+  CABIN_BAG
+  PERSONAL_ITEM
+  CHECKED_BAGGAGE
+}
+
+enum BookingDestinationImageDimensions {
+  _1200x628
+  _1280x720
+  _220x165
+  _275x250
+  _300x165
+  _375x165
+  _600x330
+  _600x600
+  _610x251
+}
+
+interface BookingInterface {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  status: String
+  contactDetails: ContactDetails
+  passengers: [Passenger]
+  arrival: RouteStop
+  departure: RouteStop
+  destinationImageUrl(dimensions: BookingDestinationImageDimensions = _600x600): String
+  passengerCount: Int
+
+  """OneWay, Multicity or Return"""
+  type: BookingType @deprecated(reason: "Use __typename instead")
+
+  """Total count of bags by the type"""
+  bagInfo: [Bag]
+}
+
+"""A connection to a list of items."""
+type BookingInterfaceConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [BookingInterfaceEdge]
+}
+
+"""An edge in a connection."""
+type BookingInterfaceEdge {
+  """The item at the end of the edge"""
+  node: BookingInterface
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+"""Booking from A to B, B to C and so on, with possible stopovers"""
+type BookingMulticity implements BookingInterface & FromToInterface & MulticityInterface {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  status: String
+  contactDetails: ContactDetails
+  passengers: [Passenger]
+  arrival: RouteStop
+  departure: RouteStop
+  destinationImageUrl(dimensions: BookingDestinationImageDimensions = _600x600): String
+  passengerCount: Int
+
+  """OneWay, Multicity or Return"""
+  type: BookingType @deprecated(reason: "Use __typename instead")
+
+  """Total count of bags by the type"""
+  bagInfo: [Bag]
+  sectors: [Sector]
+}
+
+"""Booking from A to B with no return, but possible stopovers"""
+type BookingOneWay implements BookingInterface & FromToInterface & OneWayInterface {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  status: String
+  contactDetails: ContactDetails
+  passengers: [Passenger]
+  arrival: RouteStop
+  departure: RouteStop
+  destinationImageUrl(dimensions: BookingDestinationImageDimensions = _600x600): String
+  passengerCount: Int
+
+  """OneWay, Multicity or Return"""
+  type: BookingType @deprecated(reason: "Use __typename instead")
+
+  """Total count of bags by the type"""
+  bagInfo: [Bag]
+  sector: Sector
+}
+
+"""Booking from A to B with return, and possible stopovers"""
+type BookingReturn implements BookingInterface & FromToInterface & ReturnInterface {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  status: String
+  contactDetails: ContactDetails
+  passengers: [Passenger]
+  arrival: RouteStop
+  departure: RouteStop
+  destinationImageUrl(dimensions: BookingDestinationImageDimensions = _600x600): String
+  passengerCount: Int
+
+  """OneWay, Multicity or Return"""
+  type: BookingType @deprecated(reason: "Use __typename instead")
+
+  """Total count of bags by the type"""
+  bagInfo: [Bag]
+  inbound: Sector
+  outbound: Sector
+}
+
+enum BookingType {
+  BOOKING_RETURN
+  BOOKING_MULTICITY
+  BOOKING_ONE_WAY
+}
+
+type Carrier {
+  name: String
+  code: String
+}
+
+type ConfirmPaymentOutput {
+  """Indicates whether the payment was successful"""
+  isSuccess: Boolean
+
+  """The average price of the booking per passenger"""
+  price: Float
+}
+
+input ConfirmPaymentPayload {
+  """Token received in Search Results"""
+  bookingToken: String
+
+  """Token received from save_booking that identifies the booking process"""
+  transactionId: String!
+}
+
+"""Bookings contact email and phone"""
+type ContactDetails {
+  email: String
+  phone: String
+}
+
+"""GPS coordinate"""
+type Coordinate {
+  lat: Float
+  lng: Float
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format
+outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+input DateRange {
+  """Start of the date range"""
+  start: Date!
+
+  """End of the date range"""
+  end: Date
+}
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
+`date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO
+8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+type DateType {
+  local: DateTime
+  utc: DateTime
+}
+
+"""
+This data needs to be accessed on a Trip and on BookingOneWay/Return/Multicity,
+so that we can re-use one component to show from to with correct icon
+"""
+interface FromToInterface {
+  departure: RouteStop
+  arrival: RouteStop
+}
+
+type GeoIP {
+  """ISO country code"""
+  isoCountryCode: String
+
+  """Coordinates"""
+  coordinates: Coordinate
+}
+
+type HoldBagOption {
+  quantity: Int
+  price: Price
+  dimensions: String
+  weight: String
+}
+
+"""Number of hold bags for a passenger for a given flight"""
+input HoldBags {
+  """Flight ID for the bags checked"""
+  flightID: String
+
+  """Number of first hold bags for given passenger"""
+  first: Int
+
+  """
+  Number of second hold bags for given passenger (first has to have a value)
+  """
+  second: Int
+
+  """
+  Number of third hold bags for given passenger (first and second have to have a value)
+  """
+  third: Int
+}
+
+type HttpError {
+  code: Int!
+  message: String!
+}
+
+input ItinerariesOneWaySearchInput {
+  """Order of the search"""
+  order: OrderSearchInput
+
+  """Sorting of the search"""
+  sort: SortSearchInput
+
+  """Limit number of results to get from the search (maximum 200)"""
+  limit: Int
+
+  """How many passengers are travelling"""
+  passengers: PassengersInput
+
+  """Itinerary for the One Way search"""
+  itinerary: ItineraryOneWayInput!
+}
+
+input ItinerariesReturnSearchInput {
+  """Order of the search"""
+  order: OrderSearchInput
+
+  """Sorting of the search"""
+  sort: SortSearchInput
+
+  """Limit number of results to get from the search (maximum 200)"""
+  limit: Int
+
+  """How many passengers are travelling"""
+  passengers: PassengersInput
+
+  """Itinerary for the return search"""
+  itinerary: ItineraryReturnInput!
+}
+
+input ItineraryCheckInput {
+  """Token received in search results"""
+  bookingToken: String!
+
+  """Number of checked bags for the booking"""
+  bags: Int!
+
+  """Number of children, adults and infants travelling"""
+  passengers: PassengersInput!
+}
+
+interface ItineraryInterface {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  price: Price
+  arrival: RouteStop
+  departure: RouteStop
+  bookingToken: String
+
+  """All segments successfully checked"""
+  isChecked: Boolean
+
+  """Itinerary is valid (exists and is not sold-out or cancelled)"""
+  isValid: Boolean
+  holdBagOptions: [HoldBagOption]
+}
+
+"""A connection to a list of items."""
+type ItineraryInterfaceConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [ItineraryInterfaceEdge]
+}
+
+"""An edge in a connection."""
+type ItineraryInterfaceEdge {
+  """The item at the end of the edge"""
+  node: ItineraryInterface
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+"""Itinerary from A to B with no return, but with possible stopovers"""
+type ItineraryOneWay implements ItineraryInterface & FromToInterface & OneWayInterface {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  price: Price
+  arrival: RouteStop
+  departure: RouteStop
+  bookingToken: String
+
+  """All segments successfully checked"""
+  isChecked: Boolean
+
+  """Itinerary is valid (exists and is not sold-out or cancelled)"""
+  isValid: Boolean
+  holdBagOptions: [HoldBagOption]
+  sector: Sector
+}
+
+input ItineraryOneWayInput {
+  """Origin location of the travel"""
+  origin: LocationItineraryInput!
+
+  """Destination location of the travel"""
+  destination: LocationItineraryInput
+
+  """Date Range of departure"""
+  outboundDate: DateRange!
+}
+
+"""Itinerary from A to B with return trip, and with possible stopovers"""
+type ItineraryReturn implements ItineraryInterface & FromToInterface & ReturnInterface {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  price: Price
+  arrival: RouteStop
+  departure: RouteStop
+  bookingToken: String
+
+  """All segments successfully checked"""
+  isChecked: Boolean
+
+  """Itinerary is valid (exists and is not sold-out or cancelled)"""
+  isValid: Boolean
+  holdBagOptions: [HoldBagOption]
+  outbound: Sector
+  inbound: Sector
+}
+
+input ItineraryReturnInput {
+  """Origin location of the travel"""
+  origin: LocationItineraryInput!
+
+  """Destination location of the travel"""
+  destination: LocationItineraryInput
+
+  """Date Range of departure"""
+  outboundDate: DateRange!
+
+  """Date Range of flight back"""
+  inboundDate: DateRange
+
+  """Nights in destination of flight back"""
+  nightsInDestination: NightsInDestination
+}
+
+type Location {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  name: String
+  slug: String
+  locationId: String
+  timezone: String
+  country: LocationArea
+  city: LocationArea
+  coordinates: Coordinate
+  type: LocationType
+  countryFlagURL: String
+}
+
+type LocationArea {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  locationId: String
+  name: String
+  slug: String
+  code: String
+  flagURL: String
+}
+
+"""A connection to a list of items."""
+type LocationConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [LocationEdge]
+}
+
+"""An edge in a connection."""
+type LocationEdge {
+  """The item at the end of the edge"""
+  node: Location
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+input LocationItineraryInput {
+  """Locations IDs for travel"""
+  ids: [String]
+}
+
+input LocationsByTermInput {
+  term: String!
+
+  """Desired location type output"""
+  types: [LocationType]
+}
+
+union LocationsResult = LocationConnection | HttpError
+
+enum LocationType {
+  STATION
+  AIRPORT
+  BUS_STATION
+  CITY
+  SUBDIVISION
+  COUNTRY
+  REGION
+  CONTINENT
+  AUTONOMOUS_TERRITORY
+  SPECIAL
+}
+
+"""Used for multicity type Booking and Itinerary"""
+interface MulticityInterface {
+  departure: RouteStop
+  arrival: RouteStop
+  sectors: [Sector]
+}
+
+input NightsInDestination {
+  """Minimum nights in destination"""
+  from: Int
+
+  """Maximum nights in destination"""
+  to: Int
+}
+
+"""Used for one-way type Booking and Itinerary"""
+interface OneWayInterface {
+  departure: RouteStop
+  arrival: RouteStop
+  sector: Sector
+}
+
+enum OrderSearchInput {
+  ASC
+  DESC
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+"""Passenger details"""
+type Passenger {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  bags: [Bag]
+  birthday: String
+  email: String
+  phone: String
+  title: PassengerTitle
+  category: String
+  firstname: String
+  insuranceType: String
+  lastname: String
+  nationality: String
+  visaRequired: Boolean
+}
+
+"""Passenger information input"""
+input PassengerInput {
+  birthday: String!
+  cardNumber: String!
+  email: String!
+
+  """Number of baggage for passenger specified in each flight of the trip"""
+  holdBags: [HoldBags]!
+
+  """Expiration date (UTC) of travel document"""
+  expiration: String!
+  phone: String!
+  title: PassengerTitle!
+  category: String!
+  firstname: String!
+  insuranceType: String
+  lastname: String!
+  nationality: String!
+}
+
+input PassengersInput {
+  adults: Int
+  children: Int
+  infants: Int
+}
+
+enum PassengerTitle {
+  Mr
+  Ms
+}
+
+type Price {
+  amount: Float
+  currency: String
+}
+
+"""Used for return type Booking and Itinerary"""
+interface ReturnInterface {
+  departure: RouteStop
+  arrival: RouteStop
+  outbound: Sector
+  inbound: Sector
+}
+
+type RootMutation {
+  """
+  Saves a given booking. Initiates the reservation process on the backend. (POST Request)
+  """
+  saveBooking(payload: SaveBookingPayload): SaveBookingOutput
+
+  """Confirms the payment for a given booking. (POST Request)"""
+  confirmPayment(payload: ConfirmPaymentPayload): ConfirmPaymentOutput
+}
+
+type RootQuery {
+  """Find a booking by its id"""
+  bookingDetail(id: ID!): BookingInterface
+
+  """Retrieve all your bookings."""
+  customerBookings(after: String, first: Int, before: String, last: Int): BookingInterfaceConnection
+
+  """Query for suggested locations based on incomplete names"""
+  locationsByTerm(input: LocationsByTermInput!, after: String, first: Int, before: String, last: Int): LocationsResult
+
+  """Query to fetch all one way itineraries(flights, busses, trains)"""
+  searchOneWayItineraries(input: ItinerariesOneWaySearchInput!, after: String, first: Int, before: String, last: Int): ItineraryInterfaceConnection
+
+  """Query to fetch all return itineraries(flights, busses, trains)"""
+  searchReturnItineraries(input: ItinerariesReturnSearchInput!, after: String, first: Int, before: String, last: Int): ItineraryInterfaceConnection
+
+  """Check if itinerary is valid and bookable"""
+  checkItinerary(input: ItineraryCheckInput!): ItineraryInterface
+
+  """
+  Geography info by an IP address, if no input provided, it will use request client IP
+  """
+  geoIP(ip: String): GeoIP
+}
+
+"""Departure or arrival for a segment or sector"""
+type RouteStop {
+  """Contains utc and local time for arrival/departure of the stop"""
+  time: DateType
+
+  """
+  This could be bus stop, trainstation, airport, anywhere the Sector or segment comes to a stop
+  """
+  stop: Location
+}
+
+type SaveBookingOutput {
+  """
+  The unique ID of the transaction which then can be used to identify the booking in subsequent calls e.g confirm payment
+  """
+  transactionId: String
+  itinerary: ItineraryInterface
+  passengers: [Passenger]
+}
+
+input SaveBookingPayload {
+  """Token received in Search Results"""
+  bookingToken: String!
+
+  """Number of checked bags for the booking"""
+  bags: Int!
+
+  """
+  Specifies the payment gateway to use for the booking. If using Zooz, set to payu
+  """
+  paymentGateway: String
+
+  """
+  Information about the passengers traveling such as name, nationality, etc
+  """
+  passengers: [PassengerInput]!
+}
+
+type Sector implements FromToInterface {
+  duration: Int
+  segments: [Segment]
+  stopoverDuration: Int
+  departure: RouteStop
+  arrival: RouteStop
+  type: BookingType
+}
+
+type Segment {
+  """
+  The globally unique ID of an object. You can unmask this ID to get original
+  value but please note that this unmasked ID is not globally unique anymore and
+  therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  carrier: Carrier
+  duration: Int
+  vehicle: Vehicle
+  departure: RouteStop
+  arrival: RouteStop
+}
+
+enum SortSearchInput {
+  PRICE
+  DURATION
+  QUALITY
+  DATE
+  POPULARITY
+}
+
+type Vehicle {
+  type: String
+  uniqueNo: String
+}

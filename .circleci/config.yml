@@ -1,0 +1,233 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+defaults: &defaults
+  working_directory: ~/margarita
+  docker:
+    - image: circleci/node:10
+
+version: 2
+jobs:
+  install-dependencies:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/margarita
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: .
+          paths: .
+  flow:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - run: yarn flow
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - run: yarn lint
+  unit-tests:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - restore_cache:
+          keys:
+            - v1-0-jest-cache-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-0-jest-cache-
+      - run:
+          name: Add .env file (react-native-dotenv)
+          command: cp .env-sample .env
+      - run: yarn test --ci --color --maxWorkers=2
+      - save_cache:
+          key: v1-0-jest-cache-{{ checksum "package.json" }}
+          paths:
+            - .jestCache
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+  build-landing-page:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - run:
+          name: Build landing page
+          command: yarn workspace @kiwicom/margarita-landing-page build
+      - run:
+          name: Export landing page
+          command: yarn workspace @kiwicom/margarita-landing-page export
+      - persist_to_workspace:
+          root: .
+          paths: apps/landingPage/out
+
+  deploy-landing-page:
+    working_directory: ~/margarita
+    docker:
+      - image: circleci/python:2.7-jessie
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: AWS_ACCESS_KEY_ID=$ACCESS_KEY AWS_SECRET_ACCESS_KEY=$SECRET_KEY aws s3 sync apps/landingPage/out s3://margarita-landing-page/ --delete
+
+  deploy-graphql:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run:
+          name: Install Serverless CLI and dependencies
+          command: |
+            sudo npm i -g serverless
+            yarn install
+      - run:
+          name: Generate .env file for GraphQL
+          command: echo BASE_URL=$BASE_URL >> .env && echo API_KEY=$API_KEY >> .env
+      - run:
+          name: Copy .env file to graphql folder
+          command: cp ~/margarita/.env ~/margarita/apps/graphql
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Deploy GraphQL lambda
+          command: yarn graphql:deploy
+
+  build-and-deploy-documentation:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - add_ssh_keys:
+          fingerprints:
+            - '56:b8:5a:30:ca:27:22:43:2d:9a:9e:42:4b:e6:a1:9a'
+      - run:
+          name: Adding GitHub to known_hosts
+          command: echo "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==" >> ~/.ssh/known_hosts
+      - run:
+          name: Configure Git User
+          command: |
+            git config --global user.email "${GH_EMAIL}"
+            git config --global user.name "${GH_NAME}"
+      - run:
+          name: Deploy landing page
+          command: GIT_USER="${GH_USERNAME}" USE_SSH=true yarn workspace @kiwicom/margarita-docs deploy
+
+  publish-margarita-to-expo:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - run:
+          name: Add .env file (react-native-dotenv)
+          command: yarn create-dotenv
+      - run:
+          name: Login into Expo
+          command: npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+      - run:
+          name: Publish to Expo
+          command: |
+            cd apps/mobile
+            npx expo publish --non-interactive --max-workers 1
+
+  publish-uc-storybook-to-expo:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/margarita
+      - run:
+          name: Login into Expo
+          command: npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+      - run:
+          name: Publish to Expo
+          command: |
+            cd apps/storybook
+            yarn rnstl:universal-components
+            npx expo publish --non-interactive --max-workers 1
+
+workflows:
+  version: 2
+  test-and-release:
+    jobs:
+      - install-dependencies
+      - lint:
+          requires:
+            - install-dependencies
+      - flow:
+          requires:
+            - install-dependencies
+      - unit-tests:
+          requires:
+            - install-dependencies
+      - deploy-graphql:
+          requires:
+            - lint
+            - flow
+            - unit-tests
+          filters:
+            branches:
+              only: master
+      - build-landing-page:
+          requires:
+            - lint
+            - flow
+            - unit-tests
+          filters:
+            branches:
+              only: master
+      - deploy-landing-page:
+          requires:
+            - build-landing-page
+          filters:
+            branches:
+              only: master
+      - build-and-deploy-documentation:
+          requires:
+            - lint
+            - flow
+            - unit-tests
+          filters:
+            branches:
+              only: master
+      - publish-margarita-to-expo:
+          requires:
+            - lint
+            - flow
+            - unit-tests
+          filters:
+            branches:
+              only: master
+      - publish-uc-storybook-to-expo:
+          requires:
+            - lint
+            - flow
+            - unit-tests
+          filters:
+            branches:
+              only: master

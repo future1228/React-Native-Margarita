@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+Object {
+  "output": <TouchableWithoutFeedback
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    onPress={[MockFunction]}
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#e8edf1",
+            "borderRadius": 6,
+            "flexDirection": "row",
+            "marginBottom": 8,
+            "padding": 11,
+          },
+          false,
+          undefined,
+        ]
+      }
+    >
+      <Component
+        style={
+          Object {
+            "marginEnd": 10,
+          }
+        }
+      >
+        <IconMock
+          color="#7f91a8"
+        />
+      </Component>
+      <Text
+        style={
+          Object {
+            "color": "#46515e",
+          }
+        }
+      >
+        label: 
+      </Text>
+      <Text
+        ellipsizeMode="clip"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#171b1e",
+          }
+        }
+      >
+        value
+      </Text>
+    </Component>
+  </TouchableWithoutFeedback>,
+}
+`;
+
+exports[`renders correctly with placeholder and value 1`] = `
+Object {
+  "output": <TouchableWithoutFeedback
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    onPress={[MockFunction]}
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#e8edf1",
+            "borderRadius": 6,
+            "flexDirection": "row",
+            "marginBottom": 8,
+            "padding": 11,
+          },
+          false,
+          undefined,
+        ]
+      }
+    >
+      <Component
+        style={
+          Object {
+            "marginEnd": 10,
+          }
+        }
+      >
+        <IconMock
+          color="#7f91a8"
+        />
+      </Component>
+      <Text
+        style={
+          Object {
+            "color": "#46515e",
+          }
+        }
+      >
+        label: 
+      </Text>
+      <Text
+        ellipsizeMode="clip"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#171b1e",
+          }
+        }
+      >
+        value
+      </Text>
+    </Component>
+  </TouchableWithoutFeedback>,
+}
+`;
+
+exports[`renders with placeholder 1`] = `
+Object {
+  "output": <TouchableWithoutFeedback
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    onPress={[MockFunction]}
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#e8edf1",
+            "borderRadius": 6,
+            "flexDirection": "row",
+            "marginBottom": 8,
+            "padding": 11,
+          },
+          false,
+          undefined,
+        ]
+      }
+    >
+      <Component
+        style={
+          Object {
+            "marginEnd": 10,
+          }
+        }
+      >
+        <IconMock
+          color="#7f91a8"
+        />
+      </Component>
+      <Text
+        style={
+          Object {
+            "color": "#46515e",
+          }
+        }
+      >
+        label: 
+      </Text>
+      <Text
+        ellipsizeMode="clip"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#171b1e",
+          }
+        }
+      >
+        Anywhere
+      </Text>
+      <Text>
+        placeholder
+      </Text>
+    </Component>
+  </TouchableWithoutFeedback>,
+}
+`;

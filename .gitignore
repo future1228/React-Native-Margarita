@@ -1,0 +1,38 @@
+# Expo
+#
+.expo/
+
+# next.js
+#
+.next/
+apps/web/static/fonts/*
+apps/web/out/
+apps/landingPage/out/
+
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# apps/graphql
+#
+apps/graphql/.webpack
+apps/graphql/.serverless
+
+.env
+
+#Jest
+#
+coverage/
+
+# OSX
+#
+.DS_Store
+
+# IDE
+.idea
+.vscode
+
+deploy

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput should match snapshot diff between small and normal input 1`] = `
+"Snapshot Diff:
+- <WithTheme label=\\"Label\\" />
++ <WithTheme label=\\"Label\\" size=\\"small\\" />
+
+@@ -56,3 +56,3 @@
+          Object {
+-           \\"height\\": 44,
++           \\"height\\": 32,
+          },
+@@ -93,3 +93,3 @@
+            Object {
+-             \\"height\\": 44,
++             \\"height\\": 32,
+            },"
+`;
+
+exports[`TextInput should render a custom TextInput and match diff snapshot with unstyled one 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -59,13 +59,11 @@
+          undefined,
+          false,
+          undefined,
+          false,
+          false,
+-         Object {
+-           \\"backgroundColor\\": \\"green\\",
+-         },
++         undefined,
+        ]
+      }
+    >
+      <TextInput
+        allowFontScaling={true}"
+`;
+
+exports[`TextInput should render a custom label on the TextInput and match diff snapshot with unstyled one 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -14,13 +14,11 @@
+          Object {
+            \\"flexDirection\\": \\"row\\",
+            \\"marginBottom\\": 4,
+            \\"marginStart\\": 12,
+          },
+-         Object {
+-           \\"backgroundColor\\": \\"red\\",
+-         },
++         undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+@@ -32,14 +30,12 @@
+              \\"fontFamily\\": \\"Roboto\\",
+            },
+            Array [
+              Object {
+                \\"fontSize\\": 14,
+-             },
+-             Object {
+-               \\"color\\": \\"blue\\",
+              },
++             undefined,
+            ],
+          ]
+        }
+      >
+        Label"
+`;

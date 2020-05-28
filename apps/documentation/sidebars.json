@@ -1,0 +1,39 @@
+{
+  "docs": {
+    "Home": [
+      "index",
+      "demos",
+      "features",
+      "tequila-api",
+      "technical-big-picture",
+      "questions-bugs-feature-requests"
+    ],
+    "Developing": [
+      "getting-started",
+      "contributing",
+      "folder-structure",
+      "technical-overview",
+      "guide-tequila-api-key",
+      "guide-firebase-user"
+    ],
+    "Apps": [
+      "apps/index",
+      "apps/graphql/index",
+      "apps/mobile/index",
+      "apps/web/index"
+    ],
+    "Packages": [
+      "packages/index",
+      {
+        "type": "subcategory",
+        "label": "Universal Components",
+        "ids": [
+          "packages/universal-components/index",
+          "packages/universal-components/getting-started",
+          "packages/universal-components/contributing"
+        ]
+      },
+      "packages/margarita-components/index"
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuGroup renders with icon 1`] = `
+<Component
+  style={
+    Object {
+      "marginBottom": -0.5,
+      "marginTop": 0.5,
+    }
+  }
+>
+  <Touchable
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    borderlessRipple={false}
+    disabled={false}
+    onPress={[MockFunction]}
+    rippleColor="rgba(0, 0, 0, 0.32)"
+  >
+    <MenuItemWrapper
+      iconRendered={true}
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Icon
+          color="#7f91a8"
+          name="clock"
+          size="medium"
+          style={
+            Array [
+              Object {
+                "marginEnd": 12,
+              },
+              undefined,
+            ]
+          }
+        />
+        <Component>
+          <WithTheme
+            size="large"
+            type="attention"
+          >
+            test
+          </WithTheme>
+        </Component>
+        <Component
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+            }
+          }
+        >
+          <Icon
+            color="#00a991"
+            name="chevron-right"
+          />
+        </Component>
+      </Component>
+    </MenuItemWrapper>
+  </Touchable>
+</Component>
+`;
+
+exports[`MenuGroup renders with label 1`] = `
+<Component
+  style={
+    Object {
+      "marginBottom": -0.5,
+      "marginTop": 0.5,
+    }
+  }
+>
+  <Touchable
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    borderlessRipple={false}
+    disabled={false}
+    onPress={[MockFunction]}
+    rippleColor="rgba(0, 0, 0, 0.32)"
+  >
+    <MenuItemWrapper
+      iconRendered={false}
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Component>
+          <WithTheme
+            size="small"
+            type="secondary"
+          >
+            label
+          </WithTheme>
+          <WithTheme
+            size="large"
+            type="attention"
+          >
+            test
+          </WithTheme>
+        </Component>
+        <Component
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+            }
+          }
+        >
+          <Icon
+            color="#00a991"
+            name="chevron-right"
+          />
+        </Component>
+      </Component>
+    </MenuItemWrapper>
+  </Touchable>
+</Component>
+`;
+
+exports[`MenuGroup renders with subTitle 1`] = `
+<Component
+  style={
+    Object {
+      "marginBottom": -0.5,
+      "marginTop": 0.5,
+    }
+  }
+>
+  <Touchable
+    accessibilityComponentType="button"
+    accessibilityTraits="button"
+    borderlessRipple={false}
+    disabled={false}
+    onPress={[MockFunction]}
+    rippleColor="rgba(0, 0, 0, 0.32)"
+  >
+    <MenuItemWrapper
+      iconRendered={false}
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Component>
+          <WithTheme
+            size="large"
+            type="attention"
+          >
+            test
+          </WithTheme>
+          <WithTheme
+            size="small"
+            type="secondary"
+          >
+            sub
+          </WithTheme>
+        </Component>
+        <Component
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+            }
+          }
+        >
+          <Icon
+            color="#00a991"
+            name="chevron-right"
+          />
+        </Component>
+      </Component>
+    </MenuItemWrapper>
+  </Touchable>
+</Component>
+`;
